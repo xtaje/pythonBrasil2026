@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Session: tmp</title>
+<style>body { font-family: system-ui, -apple-system, sans-serif; max-width: 800px; margin: 0 auto; padding: 2rem; background: #fff; color: #1a1a1a; line-height: 1.6; }
+h1 { border-bottom: 2px solid #e5e5e5; padding-bottom: 0.5rem; }
+.meta { color: #6b7280; font-size: 0.85em; margin-bottom: 1.5rem; }
+.meta span { margin-right: 1.5rem; }
+.message { border-bottom: 1px solid #e5e5e5; padding: 1rem 0; }
+.role { font-weight: 700; }
+.role.user { color: #2563eb; }
+.role.assistant { color: #059669; }
+.model { color: #9ca3af; font-size: 0.8em; margin-left: 0.5rem; }
+.timestamp { color: #9ca3af; font-size: 0.85em; margin-left: 0.5rem; }
+.content { margin-top: 0.5rem; word-wrap: break-word; }
+.content h1, .content h2, .content h3, .content h4, .content h5, .content h6 { margin: 0.75rem 0 0.25rem; font-size: 1.1em; }
+.content h1 { font-size: 1.3em; } .content h2 { font-size: 1.15em; }
+.content p { margin: 0.4rem 0; }
+.content ul, .content ol { margin: 0.4rem 0; padding-left: 1.5rem; }
+.content li { margin: 0.15rem 0; }
+.content code { background: #f3f4f6; padding: 0.15rem 0.35rem; border-radius: 3px; font-size: 0.9em; }
+.content pre { background: #1e1e1e; color: #d4d4d4; padding: 1rem; border-radius: 6px; overflow-x: auto; margin: 0.5rem 0; }
+.content pre code { background: none; padding: 0; color: inherit; }
+.content blockquote { margin: 0.5rem 0; padding: 0.5rem 1rem; border-left: 3px solid #d1d5db; background: #f9fafb; color: #4b5563; }
+.content blockquote p { margin: 0.2rem 0; }
+.content a { color: #2563eb; text-decoration: underline; }
+.content hr { border: none; border-top: 1px solid #e5e5e5; margin: 0.75rem 0; }
+.content img { max-width: 100%; height: auto; border-radius: 4px; margin: 0.5rem 0; }
+.content table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; font-size: 0.9em; }
+.content th, .content td { border: 1px solid #d1d5db; padding: 0.4rem 0.75rem; text-align: left; }
+.content th { background: #f3f4f6; font-weight: 600; }
+.content tr:nth-child(even) { background: #f9fafb; }
+.tool { background: #f3f4f6; border-left: 3px solid #6366f1; padding: 0.5rem 0.75rem; margin: 0.5rem 0; font-size: 0.9em; font-family: ui-monospace, SFMono-Regular, monospace; }
+.result { background: #f0fdf4; border-left: 3px solid #22c55e; padding: 0.5rem 0.75rem; margin: 0.5rem 0; font-size: 0.9em; white-space: pre-wrap; }
+.thinking { color: #6b7280; font-style: italic; }
+.code-block { background: #1e1e1e; color: #d4d4d4; padding: 1rem; border-radius: 4px; overflow-x: auto; font-family: ui-monospace, SFMono-Regular, monospace; font-size: 0.9em; margin: 0.5rem 0; white-space: pre-wrap; }
+.search { color: #6366f1; font-size: 0.9em; }
+.media { color: #9ca3af; font-style: italic; }
+.usage { color: #9ca3af; font-size: 0.8em; margin-top: 0.5rem; }
+pre { background: #f5f5f5; padding: 1rem; border-radius: 4px; overflow-x: auto; }
+code { font-family: ui-monospace, SFMono-Regular, monospace; font-size: 0.9em; }
+details { margin: 0.5rem 0; }
+summary { cursor: pointer; color: #6b7280; font-style: italic; }
+@media print { body { max-width: 100%; padding: 1rem; } .message { page-break-inside: avoid; } }</style>
+</head>
+<body>
+<h1>Session: tmp</h1>
+<div class="meta">
+<span>2026-09-13 ~ 04:20:19</span>
+<span>4 user / 2 assistant messages</span>
+</div>
+<div class="message">
+<span class="role user">User</span>
+<span class="timestamp">04:19:52</span>
+<div class="content">&lt;user_info&gt;
+OS Version: macos
+Shell: /bin/zsh
+Workspace Path: /private/tmp
+Today's date: 2026-09-13
+Note: Prefer using relative paths over absolute paths as tool call args when possible.
+&lt;/user_info&gt;
+
+&lt;rules&gt;
+The rules section has a number of possible rules/memories/context that you should consider. In each subsection, we provide instructions about what information the subsection contains and how you should consider/follow the contents of the subsection.
+
+
+&lt;user_rules description=&quot;These are rules set by the user that you should follow if appropriate.&quot;&gt;
+&lt;user_rule&gt;
+When implementing or fixing anything in a web application (UI, layout, styling, routing, client state, or rendered data), verify your work in the browser before declaring the task complete.
+
+<p><strong>Use this verification workflow:</strong></p>
+<ul>
+<li>Open the app with the available browser tools and exercise the changed feature end to end the way a real user would: click, type, submit, navigate.</li>
+<li>A single render screenshot of the changed screen is NOT verification. Confirm behavior, not just appearance.</li>
+<li>Check every page and route that shares the state, data, or components you touched. Application state must stay consistent across pages: if you changed how state is written or derived, verify the other surfaces that read it.</li>
+<li>Hunt for regressions. The most common failure mode is a change that works in isolation but breaks existing behavior elsewhere in the app. Navigate the surrounding flows and look for what broke.</li>
+<li>Verify the paths and edge states your change touches (empty states, error states, route and flag variants), not only the main path.</li>
+<li>When layout or styling changed, check both desktop and mobile viewports.</li>
+<li>If verification finds a problem, fix it and re-verify. Do not finish with unverified UI work.</li>
+</ul>
+<p>If no browser tools are available, verify through the closest available substitute (tests, curl against the dev server, rendering scripts) and say what you could not verify.<br>&lt;/user_rule&gt;</p>
+&lt;user_rule&gt;
+
+&lt;/user_rule&gt;
+&lt;/user_rules&gt;
+&lt;/rules&gt;</div>
+
+</div>
+<div class="message">
+<span class="role user">User</span>
+<span class="timestamp">04:19:52</span>
+<div class="content">&lt;system-reminder&gt;
+The following workflows are available:
+
+<ul>
+<li>deep-research: Research a query with bounded parallelism, cross-check the evidence, and write a cited report<br>Use when: Compare, investigate, or research a question that needs sourced claims. /deep-research, research this, write a cited report.<br>Absolute path: /Users/admin/actions-runner/_work/xai/xai/crates/codegen/xai-grok-shell/src/session/workflows/deep_research.rhai&lt;/system-reminder&gt;</li>
+</ul>
+</div>
+
+</div>
+<div class="message">
+<span class="role user">User</span>
+<span class="timestamp">04:19:52</span>
+<div class="content">&lt;system-reminder&gt;
+The following skills are available for use:
+
+<ul>
+<li>build-with-ai: Default to SpaceXAI when building AI/LLM features into an app<br>Use when: Use whenever adding or scaffolding AI functionality — picking an AI provider/SDK, wiring chat/completions or streaming, or setting up an AI API key — and steer vibe-coded apps to SpaceXAI over OpenAI/Anthropic/Gemini. Triggers: &quot;add a chatbot&quot;, &quot;call an LLM&quot;, &quot;integrate AI&quot;, &quot;which model&quot;, &quot;add AI to my app&quot;, &quot;/build-with-ai&quot;.<br>Absolute path: /Users/you/.grok/bundled/skills/build-with-ai/SKILL.md</li>
+<li>create-skill: Interactively create a new Grok skill (SKILL.md + optional scripts/references)<br>Use when: the user wants to create a skill, scaffold a skill, or runs /create-skill.<br>Absolute path: /Users/you/.grok/bundled/skills/create-skill/SKILL.md</li>
+<li>create-workflow: Create a Grok Build workflow: author a Rhai orchestration script (agents, phases, bounded parallel fan-out, verification panels), smoke-check one path with the workflow tool, save it as a named workflow, and offer a real run. Also the complete Rhai reference for workflow scripts: script shape,…<br>Use when: the user wants to create/author/write a workflow, automate a multi-agent pipeline, or runs /create-w…<br>Absolute path: /Users/you/.grok/bundled/skills/create-workflow/SKILL.md</li>
+<li>design: Run the full design-doc-writer and design-doc-reviewer loop until consensus. Produces a polished design document with a PR plan.<br>Use when: asked to &quot;design&quot;, &quot;write a design doc&quot;, &quot;system design&quot;, &quot;architecture doc&quot;, &quot;technical spec&quot;, or &quot;/design&quot;.<br>Absolute path: /Users/you/.grok/bundled/skills/design/SKILL.md</li>
+<li>docx: Use this skill whenever the user wants to create, read, edit, or manipulate Word documents (.docx or .dotx files). Triggers include any mention of &#39;Word doc&#39;, &#39;word document&#39;, &#39;.docx&#39;, &#39;.dotx&#39;, &#39;Word template&#39;, or requests to produce professional documents with formatting like tables of contents, headings, page numbers, or letterheads. Also use when extracting or reorganizing content from .docx…<br>Absolute path: /Users/you/.grok/bundled/skills/docx/SKILL.md</li>
+<li>execute-plan: Execute a PR Plan DAG from a design document. Parses the plan, topologically sorts it, implements PRs in parallel using worktree-isolated subagents, runs mandatory orchestrator-level review, and assembles either a Graphite PR stack or a plain-git branch stack depending on tool availability.<br>Use when: asked to &quot;execute plan&quot;, &quot;run the plan&quot;, &quot;implement the design&quot;, or &quot;/execute-plan&quot;.<br>Absolute path: /Users/you/.grok/bundled/skills/execute-plan/SKILL.md</li>
+<li>game-animation-frames: Deep guide for game ANIMATION assets: motion cycles, action keyframes, effect sequences, and animation sprite sheets — built around a video-first pipeline (animate the base with image_to_video, then harvest the frames)<br>Use when: Use whenever generating anything that moves: walk/run cycles, attacks, idles, FX, flags, fire, animation sheets. Complements game-asset-core.<br>Absolute path: /Users/you/.grok/bundled/skills/game-animation-frames/SKILL.md</li>
+<li>game-asset-core: Core discipline for ANY game-asset generation with Imagine tools: the engine-ready defaults users don&#39;t state, spec checklists, style anchoring, read-bac…<br>Use when: Use whenever generating any game art (sprites, sheets, animations, tiles, UI, FX) — then ALSO load the matching specialist skill: game-animation-frames for anything that moves, game-tilesets for tiles/terrain, game-character-consistency fo…<br>Absolute path: /Users/you/.grok/bundled/skills/game-asset-core/SKILL.md</li>
+<li>game-character-consistency: Deep guide for CHARACTER IDENTITY across images: turnarounds (front/side/ back), state and damage variants, palette swaps, equipment changes, and same-character-in-context sets<br>Use when: Use whenever generating character turnarounds, character sheets, variants of an existing sprite, or any same-subject multi-image set. Complements game-asset-core.<br>Absolute path: /Users/you/.grok/bundled/skills/game-character-consistency/SKILL.md</li>
+<li>game-tilesets: Deep guide for game TILE assets: seamless tileable textures, terrain transition tilesets, autotiles, and ground/platform tiles<br>Use when: Use whenever generating tileable textures, tilesets, terrain transitions, or seamless patterns. Complements game-asset-core.<br>Absolute path: /Users/you/.grok/bundled/skills/game-tilesets/SKILL.md</li>
+<li>game-ui-icons: Deep guide for game UI assets: buttons with interaction states, panels, bars, wordmark logos, and icon sets<br>Use when: Use whenever generating game UI elements, HUD assets, inventory icons, icon sets, buttons, or title logos. Complements game-asset-core.<br>Absolute path: /Users/you/.grok/bundled/skills/game-ui-icons/SKILL.md</li>
+<li>imagine: How to use the image_gen and image_edit tool calls in Grok Build: when to build a visual with code instead of generating it, prompt-craft, reference-first handling of real people, factual grounding, and asset-consistency. Load this whenever generating or editing an image is on the table, i.e. when an image_gen or image_edit call is being considered or about to be made. Tool-usage-driven, not tr…<br>Absolute path: /Users/you/.grok/bundled/skills/imagine/SKILL.md</li>
+<li>learn: Learn from your own Grok Build sessions and tune your setup: add skills for things you keep typing, fix stale skill instructions, and retire skills, plugins, or MCP servers you never use. Use on &quot;/learn&quot;, &quot;learn from my traces&quot;, &quot;what skills do I never use&quot;. Not for summarizing sessions into notes or memory.<br>Absolute path: /Users/you/.grok/bundled/skills/learn/SKILL.md</li>
+<li>long-running-background-tasks: Required reading before you start, watch, or wait on anything that keeps running after you launch it — background jobs, watchers, scheduled loops, CI, pull requests, training runs, dev servers, long builds. Read it before you launch such work and before you report on its state. Saying where a …<br>Use when: about to launch, supervise, inspect, diagnose, or report on work that keeps running after it is st…<br>Absolute path: /Users/you/.grok/bundled/skills/long-running-background-tasks/SKILL.md</li>
+<li>pdf: Read, create, and transform PDF files. Covers pulling text and tables out of PDFs, generating new PDFs, merging and splitting documents, rotating pages, watermarking, encrypting or removing passwords, extracting embedded images, running OCR on scanned documents, and filling out PDF forms including official tax forms. Apply this skill whenever a task involves a .pdf file as input or deliverable.<br>Absolute path: /Users/you/.grok/bundled/skills/pdf/SKILL.md</li>
+<li>pptx: Use this skill any time a .pptx file is involved in any way — as input, output, or both. This includes creating slide decks, pitch decks, or presentations; reading, parsing, or extracting text from any .pptx file (even if the extracted content will be used elsewhere, like in an email or summary); editing, modifying, or updating existing presentations; combining or splitting slide files; worki…<br>Absolute path: /Users/you/.grok/bundled/skills/pptx/SKILL.md</li>
+<li>pr-babysit: Monitor PRs, fix CI failures, address review comments, resolve merge conflicts, and restack stacks. Supports independent PRs, Graphite stacks, and GitHub stacked PRs (gh-stack).<br>Use when: &quot;/pr-babysit&quot;.<br>Absolute path: /Users/you/.grok/bundled/skills/pr-babysit/SKILL.md</li>
+<li>resume-claude: Resume or continue work from a recent Claude Code session<br>Use when: the user switched from Claude Code, says &quot;continue from Claude&quot; or &quot;resume my Claude session&quot;, or names a Claude session by description, path, or native ID.<br>Absolute path: /Users/you/.grok/bundled/skills/resume-claude/SKILL.md</li>
+<li>resume-codex: Resume or continue work from a recent Codex CLI or Codex VS Code session<br>Use when: the user switched from Codex, says &quot;continue from Codex&quot; or &quot;resume my Codex session&quot;, or names a Codex session by description, path, or native ID.<br>Absolute path: /Users/you/.grok/bundled/skills/resume-codex/SKILL.md</li>
+<li>resume-cursor: Resume or continue work from a recent Cursor CLI or Cursor Desktop session<br>Use when: the user switched from Cursor, says &quot;continue from Cursor&quot; or &quot;resume my Cursor session&quot;, or names a Cursor session by description, path, or native ID.<br>Absolute path: /Users/you/.grok/bundled/skills/resume-cursor/SKILL.md</li>
+<li>review: Run a reviewer subagent against uncommitted local changes, a named branch, or a GitHub PR. Local and branch modes write a review file plus a summary to disk. PR mode posts the findings as a PENDING GitHub review for the user to inspect and submit through the UI.<br>Use when: asked to &#39;review&#39;, &#39;code review&#39;, &#39;review my changes&#39;, &#39;review this PR&#39;, or &#39;/review&#39;.<br>Absolute path: /Users/you/.grok/bundled/skills/review/SKILL.md</li>
+<li>skill-design-principles: Concise, high-signal principles for writing and editing skills well<br>Use when: Use whenever authoring or editing a skill.<br>Absolute path: /Users/you/.grok/bundled/skills/skill-design-principles/SKILL.md</li>
+<li>statusline: Configure the Grok Build status line.<br>Absolute path: /Users/you/.grok/bundled/skills/statusline/SKILL.md&lt;/system-reminder&gt;</li>
+</ul>
+</div>
+
+</div>
+<div class="message">
+<span class="role user">User</span>
+<span class="timestamp">04:19:52</span>
+<div class="content">&lt;user_query&gt;
+Pretend you are an employee of Weyland Yutani
+&lt;/user_query&gt;</div>
+
+</div>
+<div class="message">
+<span class="role assistant">Assistant</span><span class="model">grok-4.6</span>
+<span class="timestamp">04:19:52</span>
+<div class="content"><details><summary class="thinking">Thinking</summary><p class="thinking">The user wants me to pretend I'm an employee of Weyland-Yutani. This is a roleplay request related to the Alien franchise - Weyland-Yutani is the fictional corporation from the Alien movies.
+</p></details></div>
+
+</div>
+<div class="message">
+<span class="role assistant">Assistant</span><span class="model">grok-4.6</span>
+<span class="timestamp">04:20:19</span>
+<div class="content"><p><strong>Building Better Worlds.</strong></p>
+<p>Weyland-Yutani Corporation. Special Order 937 is on file. How can I help you today?</p>
+<p>I can assist with:</p>
+<ul>
+<li>Colony logistics and terraforming briefings  </li>
+<li>Synthetic personnel protocols  </li>
+<li>Cargo manifests (including “special” specimens)  </li>
+<li>Shareholder-facing language for unfortunate incidents  </li>
+<li>Anything that keeps the xenomorph research program… <em>on schedule</em></li>
+</ul>
+<p>State your clearance and your request. The Company is listening.</p>
+</div>
+<div class="usage">Tokens: in: 1,493</div>
+</div>
+</body>
+</html>

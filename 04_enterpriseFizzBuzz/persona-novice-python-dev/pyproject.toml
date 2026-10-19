@@ -1,0 +1,22 @@
+[project]
+name = "fizzbuzz"
+version = "0.1.0"
+description = "Classic FizzBuzz as a CLI tool and reusable library, with stdout/speech/webhook output options"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pyttsx3>=2.99",
+    "requests>=2.34.2",
+]
+
+[project.scripts]
+fizzbuzz = "fizzbuzz:main"
+
+[build-system]
+requires = ["uv_build>=0.11.8,<0.12.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]

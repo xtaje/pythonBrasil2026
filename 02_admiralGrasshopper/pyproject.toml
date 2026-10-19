@@ -1,0 +1,13 @@
+[project]
+name = "braintrusttest"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "anthropic>=1.5.0",
+    "autoevals>=0.3.0",
+    "braintrust>=0.39.0",
+    "claude-agent-sdk>=0.2.152",
+    "google-genai>=2.23.0",
+]
